@@ -36,7 +36,7 @@ class ETrombyClientService extends ETrombyClient
 ```
 
 ## configuration
-Vous devez créer un fichier `etromby.yaml` dans `config/parameters` avec ceci
+Vous devez créer un fichier `etromby.yaml` dans `config/parameters` (sans oublier de bien l'inclure dans votre fichier `service.yaml`) avec ceci
 
 ```yaml
     parameters:
