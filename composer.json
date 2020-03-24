@@ -1,6 +1,16 @@
 {
+    "name": "connected-company/symfony-etromby-bundle",
+    "description": "Client pour interroger le trombinoscope interne",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Connected\\ETrombyBundle\\": "src/"
+        }
+    },
     "require": {
-        "guzzlehttp/guzzle": "^6.5",
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "^6.0",
         "psr/log": "^1.1"
     }
 }
+
