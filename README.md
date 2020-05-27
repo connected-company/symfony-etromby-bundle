@@ -2,6 +2,14 @@
 Client pour interroger le trombinoscope interne
 
 ## installation
+Modifiez votre fichier composer pour ajouter le repository
+```bash
+    "repositories": [
+        {"type": "vcs", "url": "https://github.com/connected-company/symfony-etromby-bundle"}
+    ],
+```
+
+Exécutez ensuite
 ```bash
 $ composer require connected-company/symfony-etromby-bundle
 ```

@@ -11,11 +11,11 @@ class ETrombyClient
 {
 
     /** @var Client */
-    private $guzzleClient;
+    protected $guzzleClient;
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    protected $logger;
 
     /**
      * ETrombyClient constructor.
