@@ -56,4 +56,26 @@ class ETrombyClient
             return null;
         }
     }
+
+    /**
+     * @param string $email
+     *
+     * @return string|null
+     */
+    public function getSignatureByEmail(string $email): ?string
+    {
+        try {
+            try {
+                $response = $this->guzzleClient->get('/users/signature_by_mail/'. $email);
+            } catch (\Exception $e) {
+                $this->logger->error($e->getMessage());
+                return null;
+            }
+
+            return json_decode($response->getBody()->getContents())->view;
+        } catch (\Exception $e) {
+            $this->logger->error($e->getMessage());
+            return null;
+        }
+    }
 }
