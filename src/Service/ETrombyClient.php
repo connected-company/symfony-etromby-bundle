@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 
 
-class ETrombyClient
+class ETrombyClient implements ETrombyClientInterface
 {
 
     /** @var Client */
