@@ -78,4 +78,29 @@ class ETrombyClient implements ETrombyClientInterface
             return null;
         }
     }
+
+    /**
+     * @param array $params
+     * @return array|null
+     */
+    public function search(array $params): ?array
+    {
+        try {
+            try {
+                $response = $this->guzzleClient->post('users/search', [
+                    'body' => json_encode($params)
+                ]);
+            } catch (Exception $e) {
+                $this->logger->error($e->getMessage());
+
+                return null;
+            }
+
+            return json_decode($response->getBody()->getContents(), true);
+        } catch (Exception $e) {
+            $this->logger->error($e->getMessage());
+
+            return null;
+        }
+    }
 }
