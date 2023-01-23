@@ -80,6 +80,27 @@ class ETrombyClient implements ETrombyClientInterface
     }
 
     /**
+     * @param string $ldap
+     * @return string|null
+     */
+    public function getSignatureByLdap(string $ldap): ?string
+    {
+        try {
+            try {
+                $response = $this->guzzleClient->get('/users/signature_by_ldap/'. $ldap);
+            } catch (\Exception $e) {
+                $this->logger->error($e->getMessage());
+                return null;
+            }
+
+            return json_decode($response->getBody()->getContents())->view;
+        } catch (\Exception $e) {
+            $this->logger->error($e->getMessage());
+            return null;
+        }
+    }
+
+    /**
      * @param array $params
      * @return array|null
      */

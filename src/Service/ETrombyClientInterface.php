@@ -8,5 +8,7 @@ interface ETrombyClientInterface
 
     public function getSignatureByEmail(string $email): ?string;
 
+    public function getSignatureByLdap(string $ldap): ?string;
+
     public function search(array $params): ?array;
 }
