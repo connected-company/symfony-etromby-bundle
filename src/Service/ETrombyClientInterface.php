@@ -8,7 +8,12 @@ interface ETrombyClientInterface
 
     public function getSignatureByEmail(string $email): ?string;
 
-    public function getSignatureByLdap(string $ldap): ?string;
+    public function getSignatureByLdap(
+        string $ldap,
+        ?int $forcedGroupId = null,
+        ?int $forcedDirectionId = null,
+        ?int $forcedEntiteId = null
+    ): ?string;
 
     public function search(array $params): ?array;
 }
